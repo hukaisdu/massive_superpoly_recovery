@@ -1,2 +1,3 @@
 Superpoly_Grain128AEAD/ filter=lfs diff=lfs merge=lfs -text
 Superpoly_Trivium/ filter=lfs diff=lfs merge=lfs -text
+superpoly.tar.gz filter=lfs diff=lfs merge=lfs -text
