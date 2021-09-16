@@ -27,10 +27,8 @@ Temporary Items
 *.o
 *~
 .nfs*
-LOG
 log.txt
 data
-TERM/*
 log_thread.txt
 *.swp
 LOG_back
