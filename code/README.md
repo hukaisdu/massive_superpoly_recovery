@@ -15,7 +15,7 @@ Log and Term: the two folders are for the log file and the parts of the superpol
 ## 2 Usage of the codes
 
 1. `cd Trivium(Kreyvium or Grain128AEAD)`
-2. If there are no folders Log and Term, use `mkdir Log` and `mkdir Term`  to generate them. 
+2. If there are no folders LOG and TERM, use `mkdir LOG` and `mkdir TERM`  to generate them. 
 3. Edit the main.cpp to change the *cubeIndex* and *ROUND* to test the cube you are interested in.
 4. type `make` to compile the executive file. Note you should install the Gurobi and edit the *makefile* to fit into the edition of the Gurobi
 5. `./main` to run the program.
