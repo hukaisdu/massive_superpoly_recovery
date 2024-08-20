@@ -60,11 +60,12 @@ int SecondBackExpandPolynomial( int rounds, const bitset<288> & last, vector<bit
 		exit(-1);
 	}
 
-    GRBEnv env = GRBEnv();
+    GRBEnv env = GRBEnv( true );
     env.set(GRB_IntParam_LogToConsole, 0);
     env.set(GRB_IntParam_PoolSearchMode, 2); 
     env.set(GRB_IntParam_Threads, threads );
     env.set(GRB_IntParam_PoolSolutions, MAX); 
+     env.start();
 
     GRBModel model = GRBModel(env);
 
@@ -140,10 +141,11 @@ int BackExpandPolynomial( int rounds, vector<bitset<288> > & term )
 		cerr << __func__ << " Term is not empty" << endl;
 		exit(-1);
 	}
-    GRBEnv env = GRBEnv();
+    GRBEnv env = GRBEnv( true );
     env.set(GRB_IntParam_LogToConsole, 0);
     env.set(GRB_IntParam_PoolSearchMode, 2); 
     env.set(GRB_IntParam_PoolSolutions, MAX); 
+     env.start();
 
     GRBModel model = GRBModel(env);
 
@@ -219,12 +221,14 @@ STATUS MidSolutionCounter( int rounds, const bitset<80> & cube, const
 		bitset<288> & last, map<bitset<80>, int, CMPS<80>> & counterMap, float
 		time, int thread )
 {
-    GRBEnv env = GRBEnv();
+    GRBEnv env = GRBEnv( true );
     env.set(GRB_IntParam_LogToConsole, 0);
     env.set(GRB_IntParam_Threads, thread );
     env.set(GRB_IntParam_PoolSearchMode, 2);//focus on finding n best solutions 
     env.set(GRB_IntParam_MIPFocus, 3 );
     env.set(GRB_IntParam_PoolSolutions, MAX); // try to find 2000000
+     env.start();
+
     GRBModel model = GRBModel(env);
 
     vector<GRBVar> s(288);
